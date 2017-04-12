@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the hello module.
+ */
+/**
+ * Implements hook_schema().
+ */
+function hello_schema() {
+    $schema['hello_db'] = [
+        'description' => 'Views application table to track the status of views .',
+           'fields' => [
+            'number_of_views' => [
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'number_of_views_today' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+                'default' => 0
+
+            ],
+            'last_user' => [
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'last_time' => [
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+        ],
+
+
+      ];
+
+    return $schema;
+}

@@ -1,0 +1,3 @@
+simple_page:
+  title: Count
+  route_name: count_views

@@ -1,0 +1,7 @@
+name: Hello
+type: module
+configure: rates.admin_settings
+description: 'Module showing hello world/name'
+core: 8.x
+
+#information added by drupal.org

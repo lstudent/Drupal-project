@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ *Code for the rating module
+ */
+/**
+ *
+ */
+use Drupal\rating\EntityTypeInfo;
+
+/**
+ * Implements hook_node_insert() for node entities.
+ */
+function rating_node_insert(Drupal\node\Entity\Node $node) {
+  $type = $node->gettype();
+  if ($type == 'book' ){
+    $bookCoef = \Drupal::config('rating.settings')->get('Node_Coefficient');
+    $tid = $node->get('field_add_genres')->target_id;
+    $term = \Drupal\taxonomy\Entity\Term::load($tid);
+    $rating = intval($term->get('field_category_rating')->getString());
+    $rating += $bookCoef;
+    $term->get('field_category_rating')->setValue($rating);
+    $term->save();
+  }
+}
+
+/**
+ * Implements hook_node_delete() for node entities.
+ */
+function rating_node_delete(Drupal\node\Entity\Node $node) {
+  $type = $node->gettype();
+  if ($type == 'book' ){
+    $bookCoef = \Drupal::config('rating.settings')->get('Node_Coefficient');
+    $tid = $node->get('field_add_genres')->target_id;
+    $term = \Drupal\taxonomy\Entity\Term::load($tid);
+    $rating = intval($term->get('field_category_rating')->getString());
+    $rating -= $bookCoef;
+    $term->get('field_category_rating')->setValue($rating);
+    $term->save();
+  }
+}
+
+/**
+// * Implements hook_comment_insert() for comment entities.
+// */
+function rating_comment_insert(Drupal\comment\Entity\Comment $comment) {
+  if ($comment->getCommentedEntityTypeId() == 'node') {
+    $entity = $comment->getCommentedEntity();
+    if ($entity->gettype() == 'book') {
+      $tid = $entity->get('field_add_genres')->target_id;
+      $commentsCoef = \Drupal::config('rating.settings')
+        ->get('Comment_Coefficient');
+      $term = \Drupal\taxonomy\Entity\Term::load($tid);
+      $rating = intval($term->get('field_category_rating')->getString());
+      $rating += $commentsCoef;
+      $term->get('field_category_rating')->setValue($rating);
+      $term->save();
+    }
+  }
+}
+
+/**
+// * Implements hook_comment_delete() for comment entities.
+// */
+function rating_comment_delete(Drupal\comment\Entity\Comment $comment) {
+  if ($comment->getCommentedEntityTypeId() == 'node') {
+    $entity = $comment->getCommentedEntity();
+    if ($entity->gettype() == 'book') {
+      $tid = $entity->get('field_add_genres')->target_id;
+      $commentsCoef = \Drupal::config('rating.settings')
+        ->get('Comment_Coefficient');
+      $term = \Drupal\taxonomy\Entity\Term::load($tid);
+      $rating = intval($term->get('field_category_rating')->getString());
+      $rating -= $commentsCoef;
+      $term->get('field_category_rating')->setValue($rating);
+      $term->save();
+    }
+  }
+}

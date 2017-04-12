@@ -1,0 +1,32 @@
+<?php
+
+use \Drupal\Core\Entity\EntityInterface;
+use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\Entity\NodeType;
+
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function like_entity_extra_field_info() {
+  $extra = array();
+
+  foreach (NodeType::loadMultiple() as $bundle) {
+    $extra['node'][$bundle->Id()]['display']['my_own_pseudo_field'] = array(
+      'label' => t('My own field'),
+      'description' => t('This is my own pseudo-field'),
+      'weight' => 100,
+      'visible' => TRUE,
+    );
+  }
+
+  return $extra;
+}
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function like_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($display->getComponent('my_own_pseudo_field')) {
+    $build['form'] = \Drupal::formBuilder()->getForm('\Drupal\like\Form\LikeForm');
+  }
+}

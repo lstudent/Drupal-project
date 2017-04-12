@@ -1,0 +1,24 @@
+hello:
+  path: '/hello/{name}'
+  defaults:
+    _controller: '\Drupal\hello\Controller\HelloController::hello_content'
+    _title: ''
+  requirements:
+    _permission: 'access hello'
+
+new_forms:
+  path: 'hello/my_form'
+  defaults:
+    _form: '\Drupal\hello\Form\My'
+    _title: 'My page'
+  requirements:
+    _permission: 'access content'
+
+publish_content:
+  path: 'hello/publish_content'
+  defaults:
+    _form: '\Drupal\hello\Form\publish_content'
+    _title: 'My Content'
+  requirements:
+    _permission: 'access content'
+

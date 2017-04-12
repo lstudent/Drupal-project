@@ -1,0 +1,7 @@
+name: rating
+type: module
+description: My Rating Module
+core: 8.x
+package: custom
+configure: rating.admin_settings
+

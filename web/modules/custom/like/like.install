@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the hello module.
+ */
+/**
+ * Implements hook_schema().
+ */
+function like_schema() {
+    $schema['like_db'] = [
+
+        'description' => 'Views application table to track the status of views .',
+        'fields' => [
+
+          'entity_id' => [
+            'description' => 'Entity Id.',
+            'type' => 'int',
+            'unsigned' => TRUE,
+            'default' => 0,
+          ],
+          'uid' => [
+            'description' => 'User ID.',
+            'type' => 'int',
+            'unsigned' => TRUE,
+          ],
+          'nr_like_dislike' => [
+            'description' => 'Likes sum',
+            'type' => 'int',
+            'not null' => TRUE,
+            'default' => 0,
+          ],
+
+        ],
+
+    ];
+
+    return $schema;
+}

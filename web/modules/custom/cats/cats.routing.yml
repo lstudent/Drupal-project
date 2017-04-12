@@ -1,0 +1,8 @@
+caths:
+  path: '/cats'
+  defaults:
+    _form: '\Drupal\cats\Form\CatsForm'
+    _title: 'Cats form'
+  requirements:
+    _permission: 'access simple page'
+

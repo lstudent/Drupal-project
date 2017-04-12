@@ -1,0 +1,3 @@
+simple_page:
+  title: Hello
+  route_name: hello

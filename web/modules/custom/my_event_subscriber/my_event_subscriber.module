@@ -1,0 +1,44 @@
+<?php
+
+use \Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\Request;
+
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function my_event_subscriber_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+    if ($form_id == 'user_form') {
+        $form['event_message'] = array(
+            '#type' => 'checkbox',
+            '#title' => ('Put if you wont to receive message events'),
+             '#default_value' => TRUE,
+
+
+
+        );
+        $form['actions']['submit']['#submit'][] = 'my_event_subscriber_form_submit_handler';
+    }
+}
+
+/**
+ * Implements hook_form_submit_handler().
+ */
+function my_event_subscriber_form_submit_handler(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+    $input = getValues('event_message');
+    $element = '';
+    if ($input === FALSE) {
+
+        return isset($element['#default_value']) ? $element['#default_value'] : 0;
+    }
+    else {
+
+        return isset($input) ? $element['#return_value'] : 0;
+    }
+
+}
+/**
+ * Make the form go to route.id.
+ */

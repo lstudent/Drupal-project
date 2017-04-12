@@ -1,0 +1,10 @@
+rating.settings:
+  type: config_object
+  label: 'Rating settings'
+  mapping:
+    Node_Coefficient:
+      type: integer
+      label: 'Rating settings'
+    Comment_Coefficient:
+       type: integer
+       label: 'Rating settings'

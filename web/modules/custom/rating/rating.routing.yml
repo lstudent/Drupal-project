@@ -1,0 +1,8 @@
+rating.admin_settings:
+  path: '/admin/config/rating'
+  defaults:
+    _form: '\Drupal\rating\Form\RatingSettingsForm'
+    _title: 'rating configuration screen'
+  requirements:
+    _permission: 'access simple page'
+

@@ -1,0 +1,7 @@
+name: my_event_subscriber
+type: module
+description: 'Subscriber module for event handing in Drupal 8.'
+package: custom
+core: 8.x
+
+

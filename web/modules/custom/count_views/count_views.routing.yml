@@ -1,0 +1,8 @@
+count_views:
+  path: '/count_views/{name}'
+  defaults:
+    _controller: '\Drupal\count_views\Controller\CountController::count_content'
+    _title: ''
+  requirements:
+    _permission: 'access count_views'
+

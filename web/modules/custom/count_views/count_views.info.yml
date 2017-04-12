@@ -1,0 +1,6 @@
+name: Count_views
+type: module
+description: 'Module showing count_views world/name'
+core: 8.x
+
+#information added by drupal.org
