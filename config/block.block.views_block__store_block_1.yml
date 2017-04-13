@@ -1,0 +1,32 @@
+uuid: bbdf4618-4d62-455a-9296-d2be6f93094d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.store
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__store_block_1
+theme: bartik
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:store-block_1'
+settings:
+  id: 'views_block:store-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      store: store
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

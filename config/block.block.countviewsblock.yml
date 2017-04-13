@@ -1,0 +1,20 @@
+uuid: efc5ac50-841c-415c-98c9-4c27b23ec9b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - count_views
+  theme:
+    - bartik
+id: countviewsblock
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: count_views_block
+settings:
+  id: count_views_block
+  label: 'Count Views block'
+  provider: count_views
+  label_display: visible
+visibility: {  }

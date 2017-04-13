@@ -1,0 +1,32 @@
+uuid: f2356267-f311-4b66-9a3e-8f4d6614ffb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.books_same_author
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__books_same_author_block_1
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:books_same_author-block_1'
+settings:
+  id: 'views_block:books_same_author-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

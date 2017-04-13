@@ -1,0 +1,24 @@
+uuid: 07bfff28-72df-4d63-9c0f-cd64e70ec587
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.store.body
+    - node.type.store
+  module:
+    - text
+    - user
+id: node.store.default
+targetEntityType: node
+bundle: store
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

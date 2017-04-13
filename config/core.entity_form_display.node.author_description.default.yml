@@ -1,0 +1,62 @@
+uuid: c0146646-955b-4909-8de0-bbee1abeef70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.author_description.body
+    - field.field.node.author_description.field_biographies
+    - field.field.node.author_description.field_name
+    - field.field.node.author_description.field_photo
+    - field.field.node.author_description.field_year_old
+    - image.style.thumbnail
+    - node.type.author_description
+  module:
+    - image
+    - text
+id: node.author_description.default
+targetEntityType: node
+bundle: author_description
+mode: default
+content:
+  field_biographies:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_name:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+  field_photo:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_year_old:
+    weight: 4
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: 'Name of author'
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

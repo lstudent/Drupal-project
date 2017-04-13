@@ -1,0 +1,52 @@
+uuid: 55e92217-cc9a-4ce3-902f-2260fe42ef90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.author_description.body
+    - field.field.node.author_description.field_biographies
+    - field.field.node.author_description.field_name
+    - field.field.node.author_description.field_photo
+    - field.field.node.author_description.field_year_old
+    - node.type.author_description
+  module:
+    - image
+    - text
+    - user
+id: node.author_description.default
+targetEntityType: node
+bundle: author_description
+mode: default
+content:
+  field_biographies:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_name:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_photo:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_year_old:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true

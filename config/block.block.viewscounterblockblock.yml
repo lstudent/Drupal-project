@@ -1,0 +1,20 @@
+uuid: 41eea36e-526b-4047-b018-6482ad353a6d
+langcode: en
+status: false
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+id: viewscounterblockblock
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: ViewsCounterBlock_block
+settings:
+  id: ViewsCounterBlock_block
+  label: 'ViewsCounterBlock block'
+  provider: hello
+  label_display: visible
+visibility: {  }
