@@ -1,0 +1,9 @@
+uuid: 086ea65c-76cb-4363-ad77-16655b9ab02f
+langcode: und
+status: true
+dependencies: {  }
+name: drecr
+vid: drecr
+description: 'Description of drecr'
+hierarchy: 1
+weight: 9

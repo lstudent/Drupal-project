@@ -1,0 +1,21 @@
+uuid: da29b5e1-9626-4afe-bbfd-227e69043487
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_old
+    - node.type.author_description
+  module:
+    - text
+id: node.author_description.field_year_old
+field_name: field_year_old
+entity_type: node
+bundle: author_description
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,13 @@
+uuid: 5d7ef054-6b6c-4eff-bf60-2d51ceefdf3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.flag.flag
+label: 'add '
+type: node
+plugin: 'flag_action:flag.flag'
+configuration:
+  flag_id: flag
+  flag_action: flag

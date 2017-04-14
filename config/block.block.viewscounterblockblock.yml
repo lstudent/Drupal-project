@@ -8,7 +8,7 @@ dependencies:
     - bartik
 id: viewscounterblockblock
 theme: bartik
-region: header
+region: '-1'
 weight: 0
 provider: null
 plugin: ViewsCounterBlock_block

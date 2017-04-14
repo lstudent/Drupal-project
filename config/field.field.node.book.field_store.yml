@@ -1,0 +1,28 @@
+uuid: c569ffc5-a786-4feb-b838-9b8c0192b7f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store
+    - node.type.book
+    - node.type.store
+id: node.book.field_store
+field_name: field_store
+entity_type: node
+bundle: book
+label: Store
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      store: store
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

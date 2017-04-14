@@ -1,0 +1,28 @@
+uuid: 6f2fa4e6-a9dc-45cb-96fc-9a67c82abdfa
+langcode: en
+status: true
+dependencies: {  }
+id: add
+label: ADD
+bundles:
+  - book
+entity_type: node
+global: false
+weight: 0
+flag_short: Add
+flag_long: 'Add for favourites'
+flag_message: 'Do you want to add this book?'
+unflag_short: 'Remove to favourite'
+unflag_long: 'Remove this book from favourite '
+unflag_message: ''
+unflag_denied_text: ''
+flag_type: 'entity:node'
+link_type: reload
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: true
+  show_contextual_link: true
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

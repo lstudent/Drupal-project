@@ -1,0 +1,19 @@
+uuid: 125bc77e-fc28-42ac-8f82-e6146987c0d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_biographies
+field_name: field_biographies
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

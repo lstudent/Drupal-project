@@ -42,7 +42,7 @@ class LikeForm extends FormBase
     {
         $likeText = '';
         $likesSum = 0;
-        dpm('hi');
+      //  dpm('hi');
         $disableLike = false;
         $disableDislike = false;
         $node = \Drupal::routeMatch()->getParameter('node');

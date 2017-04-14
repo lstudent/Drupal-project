@@ -1,0 +1,13 @@
+uuid: c9779e1e-f0d4-4915-a548-9f719be94114
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.add_to_favorite_books.unflag
+label: 'Unflag this item'
+type: flagging
+plugin: 'flag_action:add_to_favorite_books.unflag'
+configuration:
+  flag_id: add_to_favorite_books
+  flag_action: unflag

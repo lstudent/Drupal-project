@@ -1,0 +1,28 @@
+uuid: 308f198e-e321-409b-826e-c4340d4ef88b
+langcode: en
+status: true
+dependencies: {  }
+id: add_to_favorite_books
+label: 'Add to Favorite Books'
+bundles:
+  - bookmark
+entity_type: flagging
+global: false
+weight: 0
+flag_short: 'Flag this item'
+flag_long: ''
+flag_message: ''
+unflag_short: 'Unflag this item'
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+flag_type: 'entity:flagging'
+link_type: reload
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

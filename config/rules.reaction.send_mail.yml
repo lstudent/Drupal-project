@@ -1,0 +1,48 @@
+uuid: 8d3b2966-8321-4a5c-b752-1b0490271018
+langcode: en
+status: true
+dependencies: {  }
+id: send_mail
+label: 'send mail'
+events:
+  -
+    event_name: 'rules_entity_insert:flagging'
+description: ''
+tags:
+  - ''
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 14bf6bd5-96e6-4ae2-b213-cb9148af376f
+  conditions:
+    id: rules_and
+    uuid: cf81a9d8-63fb-4da5-ab57-85c0ada5e44b
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: 5a5ed20f-3c09-4d98-9263-8d076b3d8a22
+    actions:
+      -
+        id: rules_action
+        uuid: e5d87195-252b-4c21-bccf-f0f7b132e883
+        context_values:
+          to:
+            - ludmila.cislaru@gmail.com
+          subject: 'add to favorite'
+          message: 'user: {{flagging.uid.entity.name}}  flagged this book {{flagging.flagged_entity.entity.title}} as favorite book'
+          reply: ''
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_send_email

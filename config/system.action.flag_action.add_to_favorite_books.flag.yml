@@ -1,0 +1,13 @@
+uuid: 5c0bb540-9bcc-4665-bde3-9078393df7fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.add_to_favorite_books.flag
+label: 'Flag this item'
+type: flagging
+plugin: 'flag_action:add_to_favorite_books.flag'
+configuration:
+  flag_id: add_to_favorite_books
+  flag_action: flag

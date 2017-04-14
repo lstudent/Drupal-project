@@ -1,0 +1,28 @@
+uuid: 9780c6d4-7a4b-4172-97c4-0ce086dba539
+langcode: en
+status: true
+dependencies: {  }
+id: flag
+label: Flag
+bundles:
+  - book
+entity_type: node
+global: false
+weight: 0
+flag_short: 'add '
+flag_long: 'add '
+flag_message: 'add '
+unflag_short: 'Unflag this item'
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+flag_type: 'entity:node'
+link_type: reload
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: false
+  show_on_form: true
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

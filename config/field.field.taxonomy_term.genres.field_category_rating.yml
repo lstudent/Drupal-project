@@ -1,0 +1,25 @@
+uuid: 2c9a2956-d659-47b1-9113-ff382632a402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_category_rating
+    - taxonomy.vocabulary.genres
+id: taxonomy_term.genres.field_category_rating
+field_name: field_category_rating
+entity_type: taxonomy_term
+bundle: genres
+label: category_rating
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

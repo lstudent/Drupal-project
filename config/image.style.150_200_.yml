@@ -1,0 +1,14 @@
+uuid: 7b985de6-0f5e-40b3-b7c1-413677df0972
+langcode: en
+status: true
+dependencies: {  }
+name: 150_200_
+label: '150*200 '
+effects:
+  599f9aab-07b7-45f0-a3bf-76e5d7cfb860:
+    uuid: 599f9aab-07b7-45f0-a3bf-76e5d7cfb860
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 200

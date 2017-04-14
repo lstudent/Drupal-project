@@ -1,0 +1,9 @@
+uuid: b4eb629f-7d37-4a2f-afa4-f2c145c8fd34
+langcode: en
+status: true
+dependencies: {  }
+name: Field_rating
+vid: field_rating
+description: ''
+hierarchy: 0
+weight: 0
