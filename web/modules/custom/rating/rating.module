@@ -13,10 +13,15 @@ use Drupal\rating\EntityTypeInfo;
  */
 function rating_node_insert(Drupal\node\Entity\Node $node) {
   $type = $node->gettype();
+
   if ($type == 'book' ){
     $bookCoef = \Drupal::config('rating.settings')->get('Node_Coefficient');
-    $tid = $node->get('field_add_genres')->target_id;
+    $tid = $node->get('field_add_genres')->getvalue()[0]['target_id'];
+    if (!isset($tid)) {
+        return;
+    }
     $term = \Drupal\taxonomy\Entity\Term::load($tid);
+//    dsm($tid);
     $rating = intval($term->get('field_category_rating')->getString());
     $rating += $bookCoef;
     $term->get('field_category_rating')->setValue($rating);
@@ -32,6 +37,9 @@ function rating_node_delete(Drupal\node\Entity\Node $node) {
   if ($type == 'book' ){
     $bookCoef = \Drupal::config('rating.settings')->get('Node_Coefficient');
     $tid = $node->get('field_add_genres')->target_id;
+    if (!isset($tid)) {
+        return;
+    }
     $term = \Drupal\taxonomy\Entity\Term::load($tid);
     $rating = intval($term->get('field_category_rating')->getString());
     $rating -= $bookCoef;
