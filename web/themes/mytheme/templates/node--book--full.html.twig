@@ -1,0 +1,19 @@
+
+<div class="container">
+            <div class="left" style="float: left; width: 30%">
+                {{ content.field_cover }}
+                {{ content.field_year }}
+                <h2><b> Book rating:</b></h2>
+                {{ statistic }}
+
+            </div>
+            <div class="right">
+                <h2><b>{{ label }}</b></h2>
+                {{ content.field_author }}
+                <a href="http://www.isbnsearch.org/search?s={{ content.field_isbn_book.0 }}">{{ content.field_isbn_book }}</a>
+                <p>{{ content.field_description }}</p>
+                {{ content|without('label', 'field_author', 'field_cover','field_year', 'field_description','field_isbn_book') }}
+            </div>
+</div>
+
+

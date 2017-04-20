@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ *
+ */
+function count_views_theme($existing, $type, $theme, $path) {
+
+    return array(
+        'count'=> [
+            'variables'=> [
+        'last_time' => NULL,
+        'nr_views'=> NULL,
+        'nr_views_today' => NULL,
+        'last_user' => NULL,
+                ]
+]
+  );
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function count_views_preprocess_node(&$variables){
+    $only_node_route = 'entity.node.canonical';
+    if (\Drupal::routeMatch()->getRouteName() != $only_node_route) {
+        return;
+    }
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $nid = $node->nid->value;
+    //   $uri = \Drupal::request()->getRequestUri();
+    $db = \Drupal::database();
+    $query = $db->select('count_db', 'cdb')->fields('cdb', ['nr_views', 'nr_views_today', 'last_user', 'last_time']);
+    $results = $query->condition('hook_id', $nid)->execute()->fetchAssoc();
+    $views = strval($results['nr_views']);
+    $views_today = strval($results['nr_views_today']);
+    $last_user = strval($results['last_user']);
+    $timestamp = time();
+    $testtime = Date('d/m/Y - H:i', $timestamp);
+
+    $variables['statistic'] = [
+        '#theme' => 'count',
+        '#last_time' => t($testtime),
+        '#nr_views' => t($views),
+        '#nr_views_today' => t($views_today),
+        '#last_user' => t($last_user)
+    ];
+
+}

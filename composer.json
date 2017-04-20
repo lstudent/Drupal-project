@@ -49,7 +49,8 @@
         "drupal/views_load_more": "1.x-dev",
         "drush/drush": "~8.0",
         "webflo/drupal-finder": "^0.2.1",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+
     },
     "require-dev": {
         "behat/mink": "~1.7",

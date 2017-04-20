@@ -1,0 +1,7 @@
+name: fields_custom
+type: module
+description: 'Module showing fields ISBN book'
+package: custom
+core: 8.x
+
+#information added by drupal.org

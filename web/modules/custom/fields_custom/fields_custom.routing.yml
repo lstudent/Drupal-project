@@ -1,0 +1,7 @@
+count_views:
+  path: '/fields_custom'
+  defaults:
+    _title: ''
+  requirements:
+    _permission: 'access fields_custom'
+

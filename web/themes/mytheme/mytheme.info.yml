@@ -1,0 +1,5 @@
+name: mytheme
+type: theme
+description: 'My first theme.'
+core: 8.x
+base theme: bartik

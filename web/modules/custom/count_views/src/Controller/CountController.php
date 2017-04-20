@@ -17,12 +17,15 @@ class CountController extends ControllerBase {
     /**
      * Hello page.
      *
-     * @return Drupal renderable array with content.
+     *
      */
     public function count_content($name) {
         return array(
-            '#type' => 'markup',
-            '#markup' => $this->t('Count_views, @name!', ['@name' => $name]),
+            '#theme' => 'count_twig',
+            '#last_time' => $this->t('value'),
+            '#nr_views' => $this->t('value'),
+            '#nr_views_today' => $this->t('value'),
+            '#last_user' => $this->t('value'),
         );
     }
 

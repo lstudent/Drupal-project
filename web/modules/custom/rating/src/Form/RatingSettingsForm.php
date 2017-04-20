@@ -16,17 +16,10 @@ class RatingSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
-    return [
-      'rating.settings',
-    ];
-  }
-  /**
-   * {@inheritdoc}
-   */
   public function getFormId() {
     return 'rating_settings_form';
   }
+
   /**
    * {@inheritdoc}
    */
@@ -48,8 +41,6 @@ $config = $this->config('rating.settings');
 
      return parent::buildForm($form, $form_state);
   }
-
-
 
   /**
    * {@inheritdoc}
@@ -87,6 +78,15 @@ $config = $this->config('rating.settings');
         $term->get('field_category_rating')->setValue($rating);
         $term->save();
       }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return [
+      'rating.settings',
+    ];
   }
 }
 

@@ -131,25 +131,6 @@ class LikeForm extends FormBase
         return 0;
     }
 
-    public function addLike($likeValue, $nid, $uid) {
-        $db = \Drupal::database();
-        $query = $db->select('like_db', 'ldb')->fields('ldb', ['nr_like_dislike']);
-        $results = $query->condition('entity_id', $nid)->condition('uid', $uid)->execute()->fetchAssoc();
-        if ($results) {
-            $fields = array(
-                'nr_like_dislike' => (int)$likeValue,
-            );
-            $db->update('like_db')->fields($fields)->condition('entity_id', $nid)->condition('uid', $uid)->execute();
-        } else {
-            $fields = array(
-                'entity_id' => (int)$nid,
-                'uid' => (int)$uid,
-                'nr_like_dislike' => (int)$likeValue,
-            );
-            $db->insert('like_db')->fields($fields)->execute();
-        }
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -189,6 +170,25 @@ class LikeForm extends FormBase
 //            $likeValue = -1;
 //            $action = 'dislike';
 //        }
+    }
+
+    public function addLike($likeValue, $nid, $uid) {
+        $db = \Drupal::database();
+        $query = $db->select('like_db', 'ldb')->fields('ldb', ['nr_like_dislike']);
+        $results = $query->condition('entity_id', $nid)->condition('uid', $uid)->execute()->fetchAssoc();
+        if ($results) {
+            $fields = array(
+                'nr_like_dislike' => (int)$likeValue,
+            );
+            $db->update('like_db')->fields($fields)->condition('entity_id', $nid)->condition('uid', $uid)->execute();
+        } else {
+            $fields = array(
+                'entity_id' => (int)$nid,
+                'uid' => (int)$uid,
+                'nr_like_dislike' => (int)$likeValue,
+            );
+            $db->insert('like_db')->fields($fields)->execute();
+        }
     }
 
     public function callbackAjaxRefresh(array &$form, FormStateInterface $form_state){

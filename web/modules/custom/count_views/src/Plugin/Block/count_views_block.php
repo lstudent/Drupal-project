@@ -57,11 +57,18 @@ class count_views_block extends BlockBase {
           $db->insert('count_db')->fields($fields)->execute();
           $text = 'Total views: 0<br/>Views today: 0<br/>Last user: '.\Drupal::currentUser()->getAccountName().'<br/>Last time: '.Date('d/m/Y - H:i', $timestamp);
       }
-
+      $last_user = strval($results['last_user']);
+      $testtime = Date('d/m/Y - H:i', $timestamp);
+        $views_today =strval($results['nr_views_today']);
         return array(
-            '#markup' => $this->t((string)$text),
+
+            '#theme' => 'count',
+            '#last_time' => $this->t($testtime),
+            '#nr_views' => $this->t($views_today),
+            '#nr_views_today' => $this->t($views_today),
+            '#last_user' => $this->t($last_user),
+
+//            '#markup' => $this->t((string)$text),
         );
-
-
     }
 }
