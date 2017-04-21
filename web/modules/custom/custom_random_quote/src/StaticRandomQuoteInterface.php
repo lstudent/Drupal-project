@@ -5,9 +5,9 @@
  */
 namespace  Drupal\custom_random_quote;
 
-use Drupal\random_quote\IQuoteService;
+use Drupal\random_quote\QuoteServiceInterface;
 
-class StaticRandomQuote implements IQuoteService {
+class StaticRandomQuoteInterface implements QuoteServiceInterface {
 
     protected static $quotes = array("Quote1", "Quote2", "Quote3", "Quote4", "Quote5");
 

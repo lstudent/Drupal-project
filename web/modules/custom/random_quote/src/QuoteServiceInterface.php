@@ -5,7 +5,7 @@
  */
 namespace  Drupal\random_quote;
 
-interface IQuoteService {
+interface QuoteServiceInterface {
 
     /**
      * Gets a random quote.
