@@ -1,0 +1,7 @@
+name: random_quote
+type: module
+description: 'Module showing random quote'
+package: custom
+core: 8.x
+
+#information added by drupal.org

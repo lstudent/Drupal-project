@@ -1,0 +1,7 @@
+random_quote:
+  path: '/random_quote'
+  defaults:
+    _title: ''
+  requirements:
+    _permission: 'access random_quote'
+

@@ -10,7 +10,7 @@
             <div class="right">
                 <h2><b>{{ label }}</b></h2>
                 {{ content.field_author }}
-                <a href="http://www.isbnsearch.org/search?s={{ content.field_isbn_book.0 }}">{{ content.field_isbn_book }}</a>
+                <a target="_blank" href="http://www.isbnsearch.org/search?s={{ content.field_isbn_book.0 }}">{{ content.field_isbn_book }}</a>
                 <p>{{ content.field_description }}</p>
                 {{ content|without('label', 'field_author', 'field_cover','field_year', 'field_description','field_isbn_book') }}
             </div>

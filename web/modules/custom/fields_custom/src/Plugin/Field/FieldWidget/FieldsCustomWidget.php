@@ -30,8 +30,9 @@ class FieldsCustomWidget extends WidgetBase {
             '#type' => 'textfield',
             '#default_value' => $value,
             '#size' => 13,
-            '#mask' => 'xxx-x-xxxxx-xxx-x',
+            //'#mask' => 'xxx-x-xxxxx-xxx-x',
             '#placeholder' => 'xxx-x-xxxxx-xxx-x',
+            '#required' => TRUE,
             '#element_validate' => array(
                 array($this, 'validate'),
             ),
@@ -43,15 +44,6 @@ class FieldsCustomWidget extends WidgetBase {
      * Validate the color text field.
      */
  public function validate($element, FormStateInterface $form_state) {
-//        $isbn = new FieldsCustom();
-//        $value = $element['#value'];
-//        if (strlen($value) == 0) {
-//            $form_state->setValueForElement($element, '');
-//            return;
-//        }
-//        if (!$isbn->isValidFieldsCustom($value)) {
-//            $form_state->setError($element, t('"%isbn" isn\'t a valid ISBN number.', array('%isbn' => $value)));
-//            return;
-//        }
+
     }
 }
