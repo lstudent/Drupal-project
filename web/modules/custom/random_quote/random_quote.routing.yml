@@ -1,6 +1,7 @@
-random_quote:
-  path: '/random_quote'
+random_quote.admin_settings:
+  path: '/admin/config/random_quote'
   defaults:
+    _form: '\Drupal\random_quote\Form\RandomQuoteSettingsForm'
     _title: ''
   requirements:
     _permission: 'access random_quote'

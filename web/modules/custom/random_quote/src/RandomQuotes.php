@@ -13,9 +13,9 @@ class RandomQuotes implements IQuoteService {
      * {@inheritdoc}
      */
     public function __construct() {
-        $this->quoteServiceUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
+       // $this->quoteServiceUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
         // get from config
-        // $this->quoteServiceUrl = \Drupal::config('random_quotes')->get('url');
+         $this->quoteServiceUrl = \Drupal::config('random_quote.settings')->get('url');
     }
 
     /**

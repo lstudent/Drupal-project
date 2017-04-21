@@ -1,0 +1,7 @@
+random_quote.settings:
+  type: config_object
+  label: 'Quote settings'
+  mapping:
+    url:
+      type: string
+      label: 'Quote Service URL'

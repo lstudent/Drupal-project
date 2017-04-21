@@ -3,5 +3,5 @@ type: module
 description: 'Module showing random quote'
 package: custom
 core: 8.x
-
+configure: random_quote.admin_settings
 #information added by drupal.org
