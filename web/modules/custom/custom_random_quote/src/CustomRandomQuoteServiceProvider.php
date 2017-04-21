@@ -12,14 +12,9 @@ class CustomRandomQuoteServiceProvider extends ServiceProviderBase {
      * {@inheritdoc}
      */
     public function alter(ContainerBuilder $container) {
-
-        // check if module is enabled?
-//        $moduleHandler = \Drupal::service('module_handler');
-//        if ($moduleHandler->moduleExists('custom_random_quote')) {
         $definition = $container->getDefinition('random_quote.random_quotes');
-        $quoteImplClass = Settings::get('quote_srv_impl', 'Drupal\custom_random_quote\StaticRandomQuoteInterface');
+        $quoteImplClass = Settings::get('quote_srv_impl', 'Drupal\custom_random_quote\StaticRandomQuote');
         $definition->setClass($quoteImplClass);
-//        }
     }
 
 }
